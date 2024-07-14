@@ -69,7 +69,7 @@ public class CacheClient {
         this.set(key, r, time, unit);
         return r;
     }
-
+    //逻辑过期解决缓存击穿
     public <R, ID> R queryWithLogicalExpire(String keyPrefix, ID id, Class<R> type, Function<ID, R> dbFallBack, Long time, TimeUnit unit) {
         String key = keyPrefix + id;
         //从redis查询缓存
@@ -119,7 +119,7 @@ public class CacheClient {
         //直接返回过期的商品信息
         return r;
     }
-
+    //互斥锁解决缓存击穿
     public <R, ID> R queryWithMutex(String keyPrefix, ID id, Class<R> type, Function<ID, R> dbFallBack, Long time, TimeUnit unit) {
         String key = keyPrefix + id;
         //从redis查询缓存

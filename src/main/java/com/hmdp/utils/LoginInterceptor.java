@@ -1,17 +1,9 @@
 package com.hmdp.utils;
 
-import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.StrUtil;
-import com.hmdp.dto.UserDTO;
-import com.hmdp.entity.User;
-import io.netty.util.internal.StringUtil;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class LoginInterceptor implements HandlerInterceptor {
     //拦截器对象不是由spring创建的，因此不能自动注入，需要通过构造函数创建
