@@ -18,7 +18,7 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor(stringRedisTemplate)).excludePathPatterns(
                 //添加无需拦截的请求路径
-                "/shop/**/",//代表所有请求路径
+                "/shop/**",//代表所有请求路径
                 "/voucher/**",
                 "/shop-type/**",
                 "/upload/**",
