@@ -30,7 +30,9 @@ public class MvcConfig implements WebMvcConfigurer {
                 "/swagger-ui/**",
                 "/v2/api-docs",
                 "/webjars/**",
-                "/swagger-resources/**"
+                "/swagger-resources/**",
+                "/mq/**",
+                "/order/**"
         ).order(1);
         registry.addInterceptor(new RefreshTokenInterceptor(stringRedisTemplate)).order(0);
     }

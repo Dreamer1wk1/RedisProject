@@ -49,7 +49,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         stringRedisTemplate.opsForValue().set(LOGIN_CODE_KEY +phone,code,LOGIN_CODE_TTL , TimeUnit.MINUTES);
         //发送验证码
         log.debug("验证码发送成功，为："+code);
-        return Result.ok();
+        return Result.ok(code);
     }
 
     @Override
